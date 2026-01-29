@@ -35,9 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-test.typ
-test.pdf
-repomix-output.txt
-htmlReport
-gradle.properties
