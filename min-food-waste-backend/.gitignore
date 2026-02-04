@@ -1,3 +1,6 @@
+### Api keys ###
+src/main/resources/application-local.properties
+
 HELP.md
 .gradle
 build/
