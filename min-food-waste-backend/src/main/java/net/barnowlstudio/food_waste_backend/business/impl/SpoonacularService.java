@@ -1,5 +1,6 @@
-package net.barnowlstudio.food_waste_backend.business.impl.Recipe;
+package net.barnowlstudio.food_waste_backend.business.impl;
 
+import net.barnowlstudio.food_waste_backend.business.converters.RecipeConverter;
 import net.barnowlstudio.food_waste_backend.dto.external.SpoonacularRecipeResponse;
 import org.springframework.beans.factory.annotation.Value;
 import net.barnowlstudio.food_waste_backend.business.ISpoonacularService;
@@ -8,8 +9,12 @@ import net.barnowlstudio.food_waste_backend.dto.response.RandomRecipesResponse;
 import net.barnowlstudio.food_waste_backend.dto.response.RecipeResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+
+import static org.springframework.http.HttpStatus.BAD_GATEWAY;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @Service
 public class SpoonacularService implements ISpoonacularService {
@@ -33,19 +38,20 @@ public class SpoonacularService implements ISpoonacularService {
         SpoonacularRandomRecipesResponse spoonacularResponse = restTemplate.getForObject(url, SpoonacularRandomRecipesResponse.class);
 
         if (spoonacularResponse == null || spoonacularResponse.getRecipes() == null) {
-            throw new RuntimeException("Failed to fetch recipes from Spoonacular");
+            throw new ResponseStatusException(BAD_GATEWAY, "Failed to fetch recipes from Spoonacular");
         }
 
         List<RecipeResponse> recipes = spoonacularResponse.getRecipes()
                 .stream()
-                .map(RecipeConverter::convert)
+                .map(RecipeConverter::toDomain)
+                .map(RecipeConverter::toResponse)
                 .toList();
 
         return RandomRecipesResponse.builder().recipes(recipes).build();
     }
 
     @Override
-    public RecipeResponse getRecipeById(int recipeId){
+    public RecipeResponse getRecipeById(long recipeId){
         String url = String.format(
                 "https://api.spoonacular.com/recipes/%d/information?apiKey=%s",
                 recipeId,
@@ -55,9 +61,10 @@ public class SpoonacularService implements ISpoonacularService {
         SpoonacularRecipeResponse spoonacularResponse = restTemplate.getForObject(url, SpoonacularRecipeResponse.class);
 
         if (spoonacularResponse == null) {
-            throw new RuntimeException("Recipe not found");
+            throw new ResponseStatusException(NOT_FOUND, "Recipe not found");
         }
 
-        return RecipeConverter.convert(spoonacularResponse);
+        var domain = RecipeConverter.toDomain(spoonacularResponse);
+        return RecipeConverter.toResponse(domain);
     }
 }
