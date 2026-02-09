@@ -1,0 +1,40 @@
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    z-index: 999;
+    display: flex;
+    background-color: rgb(202, 202, 202);
+    margin: 10px;
+
+    border-radius: 8px;
+    min-height: 80px;
+}
+
+.header-logo {
+    border-right: 1px black solid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-nav-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.user-icon {
+
+}
