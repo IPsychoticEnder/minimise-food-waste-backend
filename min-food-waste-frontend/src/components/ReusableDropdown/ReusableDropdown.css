@@ -1,0 +1,28 @@
+.reusable-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.reusable-dropdown-trigger {
+    cursor: pointer;
+    display: inline-block; 
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+
+.dropdown-content {
+    position: absolute;
+    right: 0.5rem;
+    z-index: 999;
+  
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+    padding: 8px 0; 
+    overflow: hidden;
+}

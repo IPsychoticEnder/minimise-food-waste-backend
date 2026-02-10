@@ -4,13 +4,6 @@
   font-weight: 400;
 }
 
-a {
-  
-}
-a:hover {
-
-}
-
 body {
 
 }
@@ -19,13 +12,7 @@ h1 {
 
 }
 
-button {
-
-}
-button:hover {
-  
-}
-button:focus,
-button:focus-visible {
-  
+p {
+  margin: 0px;
+  padding: 0px;
 }

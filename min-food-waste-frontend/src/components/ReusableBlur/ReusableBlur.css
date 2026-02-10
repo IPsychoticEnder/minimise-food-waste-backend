@@ -1,0 +1,68 @@
+/* Trigger can be styled as needed, this is just a placeholder */
+.reusable-blur-trigger {
+    display: inline-block; /* Or block, depending on layout */
+    cursor: pointer;
+  }
+  
+  /* The main overlay */
+  .reusable-blur-overlay {
+    position: fixed; /* Cover the entire viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dimmed background (adjust opacity) */
+    /* backdrop-filter: blur(3px); */ /* Optional: Add actual blur (check browser support) */
+    display: flex; /* Use flexbox to center content */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it's on top of other content */
+    opacity: 0; /* Start hidden for transition */
+    animation: fadeIn 0.3s forwards; /* Fade-in animation */
+  }
+  
+  /* The content container inside the overlay */
+  .reusable-blur-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 90%; /* Prevent content from being too wide on large screens */
+    max-height: 90%; /* Prevent content from being too tall */
+    overflow-y: auto; /* Allow scrolling if content is too tall */
+    z-index: 1001; /* Above the overlay background */
+    /* Add transform for potential scale animation */
+    transform: scale(0.95);
+    opacity: 0;
+    animation: scaleUp 0.3s 0.1s forwards; /* Scale-up animation, slightly delayed */
+  }
+  
+  /* Optional: Close button style if you add one inside the content */
+  .reusable-blur-content .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+  }
+  .reusable-blur-content .close-button:hover {
+      color: #333;
+  }
+  
+  
+  /* Simple fade-in animation for overlay */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Simple scale/fade animation for content */
+  @keyframes scaleUp {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
