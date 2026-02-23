@@ -6,3 +6,24 @@
 .link:hover {
     color: rgb(127, 127, 127);
 }
+
+.button {
+    padding: 8px 12px;
+    border: 1px solid rgb(127, 127, 127);
+    border-radius: 7px;
+
+    font-size: 18px;
+
+    background-color: rgb(247, 247, 247);
+}
+
+.button:hover {
+    background: rgb(43, 142, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.emphasis-text {
+    color: rgb(43, 142, 255);
+    font-size: 1.1rem;
+}

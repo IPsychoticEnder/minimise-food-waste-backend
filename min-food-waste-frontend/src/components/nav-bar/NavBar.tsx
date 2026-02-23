@@ -1,11 +1,11 @@
 import React from 'react'
 
-import './nav-bar.css'
+import './NavBar.css'
 
 import { NavLink } from 'react-router-dom'
 import { MdAccountCircle } from "react-icons/md";
-import ReusableDropdown from '../ReusableDropdown/ReusableDropdown';
-import ProfilePopup from '../profile-popup/profile-popup';
+import ReusableDropdown from '../reusable-dropdown/ReusableDropdown';
+import ProfilePopup from '../profile-popup/ProfilePopup';
 
 type Props = {}
 

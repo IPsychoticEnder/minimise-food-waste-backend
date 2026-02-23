@@ -1,0 +1,12 @@
+.generate-recipes-button {
+    margin-top: 40px;
+    padding: 30px 60px;
+}
+
+.sign-up-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}

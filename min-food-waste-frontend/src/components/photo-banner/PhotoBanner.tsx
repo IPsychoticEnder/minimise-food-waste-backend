@@ -1,10 +1,13 @@
 import React from 'react'
 
+import './PhotoBanner.css'
+
 type Props = {}
 
 function PhotoBanner({}: Props) {
   return (
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ea nostrum id voluptas est in itaque et accusantium hic, eos porro eligendi quas ratione ab impedit nihil repudiandae possimus quis!</div>
+    <div className='Home-Banner'>
+    </div>
   )
 }
 

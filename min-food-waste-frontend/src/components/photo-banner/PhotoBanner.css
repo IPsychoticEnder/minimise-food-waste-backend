@@ -1,0 +1,8 @@
+.Home-Banner {
+    min-height: 500px;
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('../../assets/img/ingredients-bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
