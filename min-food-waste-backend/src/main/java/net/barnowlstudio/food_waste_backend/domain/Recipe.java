@@ -1,13 +1,11 @@
 package net.barnowlstudio.food_waste_backend.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
-@Data                       //Lombok: Auto-create getters/setters
+//@Data                     //Lombok: Auto-create getters/setters
+@Getter
 @Builder                    //Lombok: Creates constructor with all fields
 @NoArgsConstructor          //Lombok: Creates empty constructor
 @AllArgsConstructor         //Lombok: Creates constructor with all fields

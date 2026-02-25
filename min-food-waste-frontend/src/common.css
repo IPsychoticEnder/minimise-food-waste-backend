@@ -1,6 +1,7 @@
 .link {
     text-decoration: none;
     color: black;
+    cursor: pointer;
 }
 
 .link:hover {
@@ -8,22 +9,37 @@
 }
 
 .button {
-    padding: 8px 12px;
-    border: 1px solid rgb(127, 127, 127);
+    padding: 14px 20px;
     border-radius: 7px;
+    border: none;
 
-    font-size: 18px;
+    font-size: 1.2rem;
 
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
 
 .button:hover {
-    background: rgb(43, 142, 255);
-    color: white;
+    background: rgb(52, 52, 52);
     cursor: pointer;
 }
 
 .emphasis-text {
     color: rgb(43, 142, 255);
     font-size: 1.1rem;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.input-field {
+    padding: 12px 8px;
+    width: 350px;
+
+    border: rgb(144, 144, 144) solid 1px;
+    border-radius: 8px;
+    
+    font-size: 1rem;
 }

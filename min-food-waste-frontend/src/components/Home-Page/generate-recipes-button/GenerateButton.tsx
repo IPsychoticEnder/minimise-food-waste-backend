@@ -1,9 +1,8 @@
-import React from 'react'
 
-import ReusableBlur from '../../reusable-blur/ReusableBlur'
-import SignUpForm from '../../sign-up-form/SignUpForm'
 
 import './GenerateButton.css'
+
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -15,11 +14,7 @@ function GenerateButton({}: Props) {
       </button>
       <div className='sign-up-link'>
         <p>Or</p>
-        <ReusableBlur
-          trigger={<p className='emphasis-text'>sign up</p>}
-        >
-          <SignUpForm/>
-        </ReusableBlur>
+        <Link className='emphasis-text link' to="/signup">sign up</Link>
         <p>now!</p>
       </div>
     </>
